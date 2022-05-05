@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Log in Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./stylesheets/login.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div id="sidebar">
+    <img src="./images/connectify.png" alt="Connectify logo" id="logo">
+  </div>
+
+
+  <div id="formPanel">
+    <form id="loginForm">
+      <h1 id="formTitle">Welcome</h1>
+      <p>Email</p>
+      <input id="email" type="email" required="required" placeholder="Email" />
+      <p>Password</p>
+      <input id="password" type="password" required="required" placeholder="Password" />
+      <input type="button" value="Login" id="submit" />
+      <p><span id="serverMsg"></span></p>
+      <h4 id="forgotP"><a href="#">Forgot Login</a>?</h4>
+      <h4 id="notMemberP"><a href="createAccount.html">Signup</a></h4>
+      <h4 id="errorMsg">&nbsp;</h4>
+    </form>
+  </div>
+
+</body>
+
+</html>
