@@ -3,6 +3,8 @@ const app = express()
 
 var session = require('express-session')
 
+app.set('view engine', 'ejs')
+
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
@@ -33,7 +35,12 @@ app.get('/login/:user/:pass', function (req, res, next) {
     if (users[req.params.user] == req.params.pass) {
         req.session.authenticated = true
         req.session.user = req.params.user
-        res.send(`Successful Login! Welcome, ${req.session.user}`);
+        // res.send(`Successful Login! Welcome, ${req.session.user}`);
+        // res.render("profile.ejs", {
+        res.redirect('/login_success.html')
+
+        //     "id": req.params.user,
+        // });
 
     } else {
         req.session.authenticated = false
