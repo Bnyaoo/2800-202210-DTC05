@@ -16,13 +16,13 @@ app.listen(5000, function (err) {
     if (err) console.log(err);
 })
 
-// app.get('/', function (req, res) {
-//     if (req.session.authenticated)
-//         res.send(`Hi ${req.session.user} !`)
-//     else {
-//         res.redirect('/login')
-//     }
-// })
+app.get('/', function (req, res) {
+    if (req.session.authenticated)
+        res.send(`Hi ${req.session.user} !`)
+    else {
+        res.redirect('/login.html')
+    }
+})
 
 app.get('/login/', function (req, res, next) {
     // console.log(req.body.email)
@@ -33,7 +33,7 @@ app.get('/login/:user/:pass', function (req, res, next) {
     if (users[req.params.user] == req.params.pass) {
         req.session.authenticated = true
         req.session.user = req.params.user
-        res.send("Successful Login!");
+        res.send(`Successful Login! Welcome, ${req.session.user}`);
 
     } else {
         req.session.authenticated = false
