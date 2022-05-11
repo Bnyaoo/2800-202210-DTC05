@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
     if (req.session.authenticated)
         res.send(`Hi ${req.session.user} !`)
     else {
-        res.redirect('/landing_Page.html')
+        res.redirect('/welcomePage.html')
     }
 })
 
