@@ -54,6 +54,8 @@ It has the following subfolders and files:
 
 ## Code References:
 - Create account page template: https://colorlib.com
+- Login Page uses the same layout as an Assignment from Prab's 1537 class, however
+we have changed out the images, colour and media query css for smaller devices
 
 
 
