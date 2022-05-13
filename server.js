@@ -12,7 +12,8 @@ mongoose.connect("mongodb+srv://COMP2800PROJECT:COMP2800@cluster0.rnbqx.mongodb.
     { useNewUrlParser: true, useUnifiedTopology: true });
 
 const userSchema = new mongoose.Schema({
-    user: String
+    user: String,
+    password: String
 });
 
 const unicornModel = mongoose.model("users", userSchema);
@@ -54,13 +55,19 @@ app.get('/login/:user/:pass', function (req, res, next) {
     password = req.params.pass;
     // res.send("HI");
 
-    unicornModel.find({ user: `${username}` }, function (err, results) {
+    unicornModel.find({$and: [{ user: `${username}` },{password: `${password}`}]}, function (err, results) {
         if (err) {
             console.log("Error " + err);
         } else {
             console.log("Data " + results);
         }
+
+        if(results == ""){
+            res.send("No user detected")
+        }
+        else{
         res.send(results);
+    }   
     });
 
 
