@@ -19,7 +19,7 @@ function send_profile(){
 //     )
 // }
     window.location.href="https://pure-depths-86049.herokuapp.com/profileUpdateSuccess";
-
+}
 
 
 
