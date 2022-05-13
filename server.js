@@ -28,9 +28,15 @@ app.set('view engine', 'ejs')
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
-app.listen(5000, function (err) {
-    if (err) console.log(err);
+app.listen(process.env.PORT || 5000, function (err) {
+    if (err)
+        console.log(err);
 })
+
+
+// app.listen(5000, function (err) {
+//     if (err) console.log(err);
+// })
 
 app.get('/', function (req, res) {
     if (req.session.authenticated)
