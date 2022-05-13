@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connectify</title>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./stylesheets/postJob.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Post Job Listing</h2>
+                        <div class="form-group">
+                            <br>
+                            <p>Please enter the following in:</p>
+
+                            <div class="form-group">
+                                <input type="text" class="form-input" name="Title" id="Title" placeholder="Job Title" />
+                            </div>
+                            <p>Please select your Job type:</p>
+                            <select class="form-input" aria-label="Default select example">
+                                <option selected>Researcher</option>
+                                <option value="1">Tech</option>
+                                <option value="2">Business</option>
+                                <option value="3">Criminology</option>
+                                <option value="4">Education</option>
+                                <option value="5">Engineering Science</option>
+                                <option value="6">Other (Input On Job Description)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="Location" id="location"
+                                placeholder="Job Location" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="wage" id="wage" placeholder="Hourly Wage" />
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="job_desc" rows="20" cols="90" class="form-input" name="job_desc"
+                                id="job_desc" placeholder="Enter Job Description"></textarea>
+                        </Div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all
+                                statements in <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit-job" id="submit-job" class="form-submit"
+                                value="Post Job" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
