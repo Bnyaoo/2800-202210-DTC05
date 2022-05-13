@@ -6,6 +6,8 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 
+current_user = ""
+
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb+srv://COMP2800PROJECT:COMP2800@cluster0.rnbqx.mongodb.net/Project2800?retryWrites=true&w=majority",
@@ -13,7 +15,8 @@ mongoose.connect("mongodb+srv://COMP2800PROJECT:COMP2800@cluster0.rnbqx.mongodb.
 
 const userSchema = new mongoose.Schema({
     user: String,
-    password: String
+    password: String,
+    test: String
 });
 
 const unicornModel = mongoose.model("users", userSchema);
@@ -25,19 +28,13 @@ app.set('view engine', 'ejs')
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
-// users = {
-//     "user1": "pass1",
-//     "user2": "pass2",
-// }
-
-
 app.listen(5000, function (err) {
     if (err) console.log(err);
 })
 
 app.get('/', function (req, res) {
     if (req.session.authenticated)
-        res.send(`Hi ${req.session.user} !`)
+        res.redirect("/welcomePage.html")
     else {
         res.redirect('/landing_Page.html')
     }
@@ -63,30 +60,33 @@ app.get('/login/:user/:pass', function (req, res, next) {
         }
 
         if(results == ""){
+            req.session.authenticated = false
             res.send("No user detected")
         }
         else{
-        res.send(results);
+        req.session.authenticated = true
+        req.session.user = req.params.user
+        current_user = req.params.user
+    
+        res.redirect("/profile.html");
     }   
     });
-
-
-    // if (users[req.params.user] == req.params.pass) {
-    //     req.session.authenticated = true
-    //     req.session.user = req.params.user
-    //     // res.send(`Successful Login! Welcome, ${req.session.user}`);
-    //     // res.render("profile.ejs", {
-
-    //     res.redirect('/login_success.html')
-
-    //     //     "id": req.params.user,
-    //     // });
-
-    // } else {
-    //     req.session.authenticated = false
-    //     res.send("Failed Login!")
-    // }
-
 })
+
+app.get('/profileUpdateSuccess', function (req, res, next) {
+    console.log(current_user);
+
+
+    unicornModel.updateOne({user: current_user}, {$set: {test:"notSuccess"}},
+    function (err, data){
+        if (err){
+            console.log("Error" + err);
+        }else{
+            console.log("Data" + data)
+        }
+        res.send("Profile Succesfully Updated")
+    });
+})
+
 
 app.use(express.static('public'));
