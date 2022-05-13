@@ -37,7 +37,7 @@ app.get('/login/:user/:pass', function (req, res, next) {
         req.session.user = req.params.user
         // res.send(`Successful Login! Welcome, ${req.session.user}`);
         // res.render("profile.ejs", {
-        res.redirect('/profile.html')
+        res.redirect('/welcomePage.html')
 
         //     "id": req.params.user,
         // });

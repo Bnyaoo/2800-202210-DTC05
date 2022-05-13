@@ -6,7 +6,9 @@ body {
     font-family: 'Montserrat';
     background-image: url("/images/signup-bg.png");
     background-size: cover;
-    padding: 115px 0;
+    padding-left: 115px 0;
+    padding-right: 115px 0;
+    padding-bottom: 115px 0;
 }
 
 img {
