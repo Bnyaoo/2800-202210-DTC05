@@ -1,5 +1,25 @@
 const express = require('express')
 const app = express()
+const https = require('https');
+const bodyparser = require("body-parser");
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+
+current_user = ""
+
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb+srv://COMP2800PROJECT:COMP2800@cluster0.rnbqx.mongodb.net/Project2800?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true });
+
+const userSchema = new mongoose.Schema({
+    user: String,
+    password: String,
+    test: String
+});
+
+const unicornModel = mongoose.model("users", userSchema);
 
 var session = require('express-session')
 
@@ -8,21 +28,21 @@ app.set('view engine', 'ejs')
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
-users = {
-    "user1": "pass1",
-    "user2": "pass2",
-}
-
-
-app.listen(5000, function (err) {
-    if (err) console.log(err);
+app.listen(process.env.PORT || 5000, function (err) {
+    if (err)
+        console.log(err);
 })
+
+
+// app.listen(5000, function (err) {
+//     if (err) console.log(err);
+// })
 
 app.get('/', function (req, res) {
     if (req.session.authenticated)
-        res.send(`Hi ${req.session.user} !`)
+        res.redirect("/welcomePage.html")
     else {
-        res.redirect('/welcomePage.html')
+        res.redirect('/landing_Page.html')
     }
 })
 
@@ -32,21 +52,47 @@ app.get('/login/', function (req, res, next) {
 })
 
 app.get('/login/:user/:pass', function (req, res, next) {
-    if (users[req.params.user] == req.params.pass) {
+    console.log(req.params.user);
+    username = req.params.user;
+    console.log(req.params.pass);
+    password = req.params.pass;
+    // res.send("HI");
+
+    unicornModel.find({$and: [{ user: `${username}` },{password: `${password}`}]}, function (err, results) {
+        if (err) {
+            console.log("Error " + err);
+        } else {
+            console.log("Data " + results);
+        }
+
+        if(results == ""){
+            req.session.authenticated = false
+            res.send("No user detected")
+        }
+        else{
         req.session.authenticated = true
         req.session.user = req.params.user
-        // res.send(`Successful Login! Welcome, ${req.session.user}`);
-        // res.render("profile.ejs", {
-        res.redirect('/welcomePage.html')
-
-        //     "id": req.params.user,
-        // });
-
-    } else {
-        req.session.authenticated = false
-        res.send("Failed Login!")
-    }
-
+        current_user = req.params.user
+    
+        res.redirect("/welcomePage.html");
+    }   
+    });
 })
+
+app.get('/profileUpdateSuccess', function (req, res, next) {
+    console.log(current_user);
+
+
+    unicornModel.updateOne({user: current_user}, {$set: {test:"notSuccess"}},
+    function (err, data){
+        if (err){
+            console.log("Error" + err);
+        }else{
+            console.log("Data" + data)
+        }
+        res.send("Profile Succesfully Updated")
+    });
+})
+
 
 app.use(express.static('public'));

@@ -6,7 +6,7 @@ function login(){
     console.log(password);
 
 
-    window.location.href=`http://localhost:5000/login/${email}/${password}`;
+    window.location.href=`http://localhost:3000/login/${email}/${password}`;
 
 }
 
