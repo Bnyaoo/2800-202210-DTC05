@@ -6,7 +6,7 @@ function login(){
     // console.log(password);
 
 
-    window.location.href=`http://localhost:5000/login/${email}/${password}`;
+    window.location.href=`https://pure-depths-86049.herokuapp.com/login/${email}/${password}`;
 
 }
 
