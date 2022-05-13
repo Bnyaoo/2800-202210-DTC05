@@ -22,6 +22,12 @@ route.get('/add-user', services.add_user)
  */
 route.get('/update-user', services.update_user)
 
+/**
+ *  @description for main admin page
+ *  @method GET /admin
+ */
+route.get('/admin', services.admin)
+
 
 // API
 route.post('/api/users', controller.create);

@@ -66,7 +66,7 @@ a {
 }
 
 #header nav{
-    background-color: #06d6a0;
+    background-color: #769EDB;
     padding: 1em 0;
     width: 100%;
 }
@@ -104,7 +104,7 @@ table{
 }
 
 .table tr:hover{
-    background-color:#06d6a0 ;
+    background-color: #769EDB;
 }
 
 .table tr:hover td > a{
@@ -197,13 +197,13 @@ table{
 }
 
 .radio input[type='radio']:checked + .radio-label:before{
-    background-color: #16db93;
+    background-color: #769EDB;
     box-shadow: inset 0 0 0 4px #e9ecef;
 }
 
 .radio input[type='radio']:focus + .radio-label:before{
     outline: none;
-    border-color:#16db93;
+    border-color: #769EDB;
 }
 
 .radio input[type='radio']:disabled + .radio-label:before{
@@ -216,7 +216,7 @@ table{
 #add_user .form-group .btn{
     width: 100%;
     padding: .9em 1em;
-    background-color:#16db93; 
+    background-color: #769EDB;
     border: none;
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
@@ -230,3 +230,45 @@ table{
     background-color: var(--dark);
     color: var(--border);
 }
+
+body, html {
+    height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/index.jpg");
+
+    /* Set a specific height */
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: #0d6efd;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/*.button {*/
+/*    background-color: #0d6efd; !* Green *!*/
+/*    border: none;*/
+/*    color: black;*/
+/*    padding: 15px 32px;*/
+/*    text-align: center;*/
+/*    text-decoration: none;*/
+/*    display: inline-block;*/
+/*    font-size: 16px;*/
+/*    margin-top: 20px;*/
+/*}*/
