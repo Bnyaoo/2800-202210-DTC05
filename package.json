@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Bnyaoo/2800-202210-DTC05#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
     "express-session": "^1.17.2",
