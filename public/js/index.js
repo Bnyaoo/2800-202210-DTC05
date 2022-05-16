@@ -28,7 +28,11 @@ $("#update_user").submit(function(event){
 
 })
 
+<<<<<<< HEAD
 if(window.location.pathname == "/"){
+=======
+if(window.location.pathname == "/admin"){
+>>>>>>> main
     $ondelete = $(".table tbody td a.delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")

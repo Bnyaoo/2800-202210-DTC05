@@ -1,4 +1,5 @@
 const express = require('express')
+<<<<<<< HEAD
 const app = express()
 const https = require('https');
 const bodyparser = require("body-parser");
@@ -22,9 +23,18 @@ const userSchema = new mongoose.Schema({
 const unicornModel = mongoose.model("users", userSchema);
 
 var session = require('express-session')
+=======
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const bodyparser = require("body-parser");
+const path = require('path');
+const session = require("express-session");
+// const { v4: uuidv4 } = require("uuid");
+>>>>>>> main
 
-app.set('view engine', 'ejs')
+const connectDB = require('./public/server/database/connection');
 
+<<<<<<< HEAD
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
@@ -32,8 +42,14 @@ app.listen(process.env.PORT || 5000, function (err) {
     if (err)
         console.log(err);
 })
+=======
+const app = express()
+>>>>>>> main
 
+dotenv.config( { path : 'config.env'} )
+const PORT = process.env.PORT || 5000
 
+<<<<<<< HEAD
 // app.listen(5000, function (err) {
 //     if (err) console.log(err);
 // })
@@ -45,12 +61,18 @@ app.get('/', function (req, res) {
         res.redirect('/landing_Page.html')
     }
 })
+=======
+// log requests
+app.use(morgan('tiny'));
 
-app.get('/login/', function (req, res, next) {
-    // console.log(req.body.email)
-    res.send("Please Login through the URL")
-})
+// mongodb connection
+connectDB();
+>>>>>>> main
 
+// parse request to body-parser
+app.use(bodyparser.urlencoded({ extended : true}))
+
+<<<<<<< HEAD
 app.get('/login/:user/:pass', function (req, res, next) {
     console.log(req.params.user);
     username = req.params.user;
@@ -96,3 +118,23 @@ app.get('/profileUpdateSuccess', function (req, res, next) {
 
 
 app.use(express.static('public'));
+=======
+// set view engine
+app.set("view engine", "ejs")
+
+// load assets
+app.use('/css', express.static(path.resolve(__dirname, "./public/stylesheets")))
+app.use('/img', express.static(path.resolve(__dirname, "./public/images")))
+app.use('/js', express.static(path.resolve(__dirname, "./public/js")))
+
+// app.use(session({
+//     secret: uuidv4(), //  '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+//     resave: false,
+//     saveUninitialized: true
+// }));
+
+// load routers
+app.use('/', require('./public/server/routes/router'))
+
+app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
+>>>>>>> main

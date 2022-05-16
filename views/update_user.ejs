@@ -8,7 +8,11 @@
     <div class="container">
         <div class="box-nav d-flex justify-between">
            <div class="filter">
+<<<<<<< HEAD
                <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+=======
+               <a href="/admin"><i class="fas fa-angle-double-left"></i> All Users</a>
+>>>>>>> main
            </div>
         </div>
         <div class="form-title text-center">
@@ -30,6 +34,13 @@
             <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
         </div>
         <div class="form-group">
+<<<<<<< HEAD
+=======
+            <label for="Password" class="text-light">Password</label>
+            <input type="text" name="password" value="<%= user.password%>" placeholder="">
+        </div>
+        <div class="form-group">
+>>>>>>> main
             <label for="gender" class="text-light">Gender</label>
             <div class="radio inline">
                 <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
@@ -44,17 +55,34 @@
         <div class="form-group">
             <label for="gender" class="text-light">Status</label>
             <div class="radio inline">
+<<<<<<< HEAD
                 <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
                 <label for="radio-4" class="radio-label">Active</label>
             </div>
             <div class="radio inline">
                 <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
                 <label for="radio-5" class="radio-label">Inactive</label>
+=======
+                <input type="radio" id="radio-4" name="status" value="Active" <%= user.privilege == 'Admin' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">Admin</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.privilege == 'User' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">User</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.privilege == 'Employer' ? 'checked' : '' %> >
+                <label for="radio-6" class="radio-label">Employer</label>
+>>>>>>> main
             </div>
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
             <button type="submit" class="btn text-dark update">Save</button>
+=======
+            <button type="submit" class="btn text-dark update">Submit</button>
+>>>>>>> main
         </div>
 
     </div>
