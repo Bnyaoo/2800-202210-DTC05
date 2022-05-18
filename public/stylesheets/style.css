@@ -262,6 +262,7 @@ body, html {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*.button {*/
 /*    background-color: #0d6efd; !* Green *!*/
 /*    border: none;*/
@@ -274,6 +275,8 @@ body, html {
 /*    margin-top: 20px;*/
 /*}*/
 =======
+=======
+>>>>>>> main
 body{
     font-family: 'Open Sans', sans-serif;
     background-image: url('./public/images/landing_Page-bg.jpg');
@@ -296,4 +299,7 @@ form{
 #login .title > span{
     font-size: .8em;
 }
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main

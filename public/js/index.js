@@ -29,7 +29,11 @@ $("#update_user").submit(function(event){
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if(window.location.pathname == "/"){
+=======
+if(window.location.pathname == "/admin"){
+>>>>>>> main
 =======
 if(window.location.pathname == "/admin"){
 >>>>>>> main

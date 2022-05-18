@@ -5,7 +5,11 @@ exports.create = (req,res)=>{
     // validate request
     if(!req.body){
 <<<<<<< HEAD
+<<<<<<< HEAD
         res.status(400).send({ message : "Content can not be emtpy!"});
+=======
+        res.status(400).send({ message : "Content can not be empty!"});
+>>>>>>> main
 =======
         res.status(400).send({ message : "Content can not be empty!"});
 >>>>>>> main
@@ -17,8 +21,14 @@ exports.create = (req,res)=>{
         name : req.body.name,
         email : req.body.email,
 <<<<<<< HEAD
+<<<<<<< HEAD
         gender: req.body.gender,
         status : req.body.status
+=======
+        password : req.body.password,
+        privilege : req.body.privilege,
+        gender: req.body.gender
+>>>>>>> main
 =======
         password : req.body.password,
         privilege : req.body.privilege,
@@ -32,7 +42,11 @@ exports.create = (req,res)=>{
         .then(data => {
             //res.send(data)
 <<<<<<< HEAD
+<<<<<<< HEAD
             res.redirect('/add-user');
+=======
+            res.redirect('/base');
+>>>>>>> main
 =======
             res.redirect('/base');
 >>>>>>> main
