@@ -1,24 +1,15 @@
 const express = require('express');
-<<<<<<< HEAD
-=======
-const User = require('../model/model.js')
-const jwt = require('jsonwebtoken');
+const User = require('../model/model.js');
 
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
-
->>>>>>> main
 const route = express.Router()
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
-<<<<<<< HEAD
-=======
 const mongoose = require("mongoose");
 const {add_user} = require("../services/render");
 const axios = require("axios");
 const {render} = require("ejs");
 const {errors} = require("passport-local-mongoose");
->>>>>>> main
 
 /**
  *  @description Root Route
@@ -33,8 +24,6 @@ route.get('/', services.homeRoutes);
 route.get('/add-user', services.add_user)
 
 /**
-<<<<<<< HEAD
-=======
  *  @description for main admin page
  *  @method GET /admin
  */
@@ -45,11 +34,6 @@ route.get('/admin', services.admin)
  *  @method GET /index
  */
 route.get('/index', services.index)
-
-const  credential = {
-    email : "admin@gmail.com",
-    password : "admin123"
-}
 
 // START OF LOGIN BLOCK //
 
@@ -74,8 +58,8 @@ route.post('/login', async (req, res) => {
         } else if (user.privilege == "Employer") {
             return res.redirect('/postJob');
             // login redirect for students
-        } else if (user.privilege == "User") {
-            return res.redirect('/welcomePage');
+        } else if (user.privilege == "Student") {
+            return res.redirect('/add-listing');
         }
     }
 
@@ -115,19 +99,12 @@ route.get('/landingPage', services.landingPage)
 route.get('/base', services.base)
 
 /**
->>>>>>> main
  *  @description for update user
  *  @method GET /update-user
  */
 route.get('/update-user', services.update_user)
 
 /**
-<<<<<<< HEAD
- *  @description for main admin page
- *  @method GET /admin
- */
-route.get('/admin', services.admin)
-=======
  *  @description for contact us page
  *  @method GET /contact
  */
@@ -150,7 +127,39 @@ route.get('/profile', services.profile)
  *  @method GET /postJob
  */
 route.get('/postJob', services.postJob)
->>>>>>> main
+
+// ADMIN JOB LISTING START //
+
+route.get('/add-listing', services.getListingForm);
+
+route.post('/add-listing', services.postListing);
+
+route.get('/edit-listing/:prodId', services.editListingPage);
+
+route.post('/edit-listing', services.editListingPost);
+
+route.post('/delete-listing', services.deleteListing);
+
+// ADMIN JOB LISTING END //
+
+// JOB LISTINGS CART START //
+
+route.get('/listings', services.getAllListings);
+
+route.get('/products/:prodId', services.getListingDetail);
+
+route.post('/add-to-cart', services.addToCart);
+
+route.get('/cart', services.getCart);
+
+route.post('/delete-cart', services.deleteInCart);
+
+route.get('/error-demo', (req, res, next) => {
+    throw new Error('This is to test Error handling in express');
+});
+
+// JOB LISTINGS CART END //
+
 
 
 // API

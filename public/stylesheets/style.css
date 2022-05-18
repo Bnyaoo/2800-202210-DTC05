@@ -261,19 +261,6 @@ body, html {
     color: white;
 }
 
-<<<<<<< HEAD
-/*.button {*/
-/*    background-color: #0d6efd; !* Green *!*/
-/*    border: none;*/
-/*    color: black;*/
-/*    padding: 15px 32px;*/
-/*    text-align: center;*/
-/*    text-decoration: none;*/
-/*    display: inline-block;*/
-/*    font-size: 16px;*/
-/*    margin-top: 20px;*/
-/*}*/
-=======
 body{
     font-family: 'Open Sans', sans-serif;
     background-image: url('./public/images/landing_Page-bg.jpg');
@@ -296,4 +283,3 @@ form{
 #login .title > span{
     font-size: .8em;
 }
->>>>>>> main
