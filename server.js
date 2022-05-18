@@ -1,52 +1,41 @@
 const express = require('express')
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const bodyparser = require("body-parser");
+const path = require('path');
+const session = require("express-session");
+// const { v4: uuidv4 } = require("uuid");
+
+const connectDB = require('./public/server/database/connection');
 const app = express()
 
-var session = require('express-session')
+dotenv.config( { path : 'config.env'} )
+const PORT = process.env.PORT || 5000
 
-app.set('view engine', 'ejs')
+// log requests
+app.use(morgan('tiny'));
 
-// Use the session middleware
-app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
+// mongodb connection
+connectDB();
 
-users = {
-    "user1": "pass1",
-    "user2": "pass2",
-}
+// parse request to body-parser
+app.use(bodyparser.urlencoded({ extended : true}))
 
+// set view engine
+app.set("view engine", "ejs")
 
-app.listen(5000, function (err) {
-    if (err) console.log(err);
-})
+// load assets
+app.use('/css', express.static(path.resolve(__dirname, "./public/stylesheets")))
+app.use('/img', express.static(path.resolve(__dirname, "./public/images")))
+app.use('/js', express.static(path.resolve(__dirname, "./public/js")))
 
-app.get('/', function (req, res) {
-    if (req.session.authenticated)
-        res.send(`Hi ${req.session.user} !`)
-    else {
-        res.redirect('/landing_Page.html')
-    }
-})
+// app.use(session({
+//     secret: uuidv4(), //  '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
-app.get('/login/', function (req, res, next) {
-    // console.log(req.body.email)
-    res.send("Please Login through the URL")
-})
+// load routers
+app.use('/', require('./public/server/routes/router'))
 
-app.get('/login/:user/:pass', function (req, res, next) {
-    if (users[req.params.user] == req.params.pass) {
-        req.session.authenticated = true
-        req.session.user = req.params.user
-        // res.send(`Successful Login! Welcome, ${req.session.user}`);
-        // res.render("profile.ejs", {
-        res.redirect('/login_success.html')
-
-        //     "id": req.params.user,
-        // });
-
-    } else {
-        req.session.authenticated = false
-        res.send("Failed Login!")
-    }
-
-})
-
-app.use(express.static('public'));
+app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
