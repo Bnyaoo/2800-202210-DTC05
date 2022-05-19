@@ -924,7 +924,7 @@ a:hover {
 }
 
 .content {
-    padding: 7rem 0;
+    padding-top: 7rem;
 }
 
 h2 {
@@ -1009,4 +1009,9 @@ label.error {
 
 .icon-map {
     padding-right: 5px;
+}
+
+#footerPlaceholder1{
+    padding-top: 7rem;
+
 }
