@@ -2,6 +2,7 @@
   margin: 5px;
   height: 35vh;
   width: 100%;
+  border-radius: 25px;
 }
 #card {
   border-radius: 25px;
@@ -19,4 +20,10 @@
 
 .col {
   margin-bottom: 20px;
+}
+
+footer {
+  position: relative;
+  bottom:0;
+  width:100%;
 }
