@@ -1,9 +1,6 @@
 const axios = require('axios');
 const Listing = require('../model/listing');
-<<<<<<< HEAD
 const Applicant = require("../model/applicants");
-=======
->>>>>>> easter_egg_footer
 
 
 exports.homeRoutes = (req, res) => {
@@ -265,8 +262,4 @@ exports.deleteInCart = (req, res, next) => {
 
 }
 
-<<<<<<< HEAD
 // SHOP JOB LISTINGS CART END //
-=======
-// SHOP JOB LISTINGS CART END //
->>>>>>> easter_egg_footer
