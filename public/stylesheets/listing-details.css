@@ -23,3 +23,10 @@ footer {
 #description {
   margin-bottom: 6%;
 }
+
+.btn {
+  display: block;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0 auto;
+}
