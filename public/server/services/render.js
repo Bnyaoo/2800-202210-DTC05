@@ -135,7 +135,6 @@ exports.getListingForm = (req, res, next) => {
 exports.postListing = (req, res, next) => {
     const prod = new Listing({
         title: req.body.title,
-        location: req.body.location,
         imageURL: req.body.imageURL,
         pay: req.body.pay,
         description: req.body.description
@@ -201,7 +200,7 @@ exports.getAllListings = (req, res, next) => {
 exports.getListingDetail = (req, res, next) => {
     Listing.findById(req.params.prodId)
         .then(listing => {
-            res.render('listing-detail', { prod: listing, pageTitle: 'Listing Detail', path: '/', name: 'Mr. Jones' });
+            res.render('listing-detail', { prod: listing, pageTitle: 'Listing Detail', path: '/', name: 'Fucker Jones' });
         })
         .catch(err => console.log(err));
 }

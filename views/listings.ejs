@@ -1,97 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('include/head.ejs')%>
 
-<head>
+    <body>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <%- include('include/navigation.ejs')%>
 
-    <title>
-        <%= pageTitle%>
-    </title>
+            <!-- Page Content -->
+            <div class="container">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+                <div class="row">
 
-    <!-- Custom styles for this template -->
-    <link href="/css/main.css" rel="stylesheet">
-
-    <link href="/css/listings.css" rel="stylesheet">
+                    <%- include('include/sidebar.ejs')%>
 
 
-</head>
+                        <div class="col-lg-9">
 
-<body>
+                            <%- include('include/carousel.ejs')%>
 
-    <%- include('include/navigation.ejs')%>
-    <br>
+                                <div class="row">
 
-    <center>
-        <!-- Page Content -->
-        <div class="container">
+                                    <% for(let p of prods) {%>
 
-            <!-- <div class="row"> -->
-
-            <%- include('include/sidebar.ejs')%>
-
-
-            <div class="col-lg-9">
-
-
-                <div class="col">
-
-                    <% for(let p of prods) {%>
-
-                    <div class="col" id="card-body">
-                        <div class="card h-100" id="card">
-                            <a href="#"><img class="card-img-top" id="card-img" src="<%= p.imageURL%>" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">
-                                        <%= p.title%>
-                                    </a>
-                                </h4>
-                                <h5>Pay/Hour:
-                                    $<%= p.pay%>
-                                    CAD
-                                </h5>
-                                <!-- <p class="card-text">
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100">
+                                                <a href="#"><img class="card-img-top" src="<%= p.imageURL%>" alt=""></a>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <a href="#">
+                                                            <%= p.title%>
+                                                        </a>
+                                                    </h4>
+                                                    <h5>Pay/Hour:
+                                                        $<%= p.pay%>
+                                                        CAD
+                                                    </h5>
+                                                    <!-- <p class="card-text">
                                                         <%= p.description%>
                                                     </p> -->
-                            </div>
-                            <div class="card-footer">
-                                <a class="btn btn-primary" href="/products/<%=p._id%>" role="button">View Details</a>
-                                <!-- <a class="btn btn-primary" href="/edit-listing/<%=p._id%>" role="button">Edit</a> -->
-                                <form action="/delete-listing" method="POST">
-                                    <input type="hidden" name="id" value="<%=p._id%>">
-                                    <!-- <button type="submit" class="btn btn-primary">Delete</button> -->
-                                </form>
-                                <form action="/api/users" method="POST" id="add-to-cart">
-                                    <input type="hidden" name="id" value="<%=p.id%>">
-                                    <button type="submit" class="btn btn-primary">Favourite</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <a class="btn btn-primary" href="/products/<%=p._id%>" role="button">View Details</a>
+                                                    <a class="btn btn-primary" href="/edit-listing/<%=p._id%>" role="button">Edit</a>
+                                                    <form action="/delete-listing" method="POST">
+                                                        <input type="hidden" name="id" value="<%=p._id%>">
+                                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                                    </form>
+                                                    <form action="/api/users" method="POST" id="add-to-cart">
+                                                        <input type="hidden" name="id" value="<%=p.id%>">
+                                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
-
-
-                    <%
+                                        <%
                                     }
                                     %>
 
+                                </div>
+                                <!-- /.row -->
+                        </div>
+                        <!-- /.col-lg-9 -->
                 </div>
                 <!-- /.row -->
+
             </div>
-            <!-- /.col-lg-9 -->
-            <!-- </div> -->
-            <!-- /.row -->
+            <!-- /.container -->
 
-        </div>
-        <!-- /.container -->
-
-    </center>
-
-    <%- include('include/end.ejs')%>
+            <%- include('include/end.ejs')%>

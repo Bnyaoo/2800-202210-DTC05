@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connectify</title>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./stylesheets/postJob.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/postjob.css">
+</head>
+
+<body>
+<div class="main">
+    <!-- Navigation-->
+    <div class="pos-f-t" id="navbar">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <a class="links" href="./welcomePage.html">
+                    <h4 class="menuItems">HOME</h4>
+                </a>
+                <a class="links" href="#">
+                    <h4 class="menuItems">OPPORTUNITIES</h4>
+                </a>
+                <a class="links" href="#">
+                    <h4 class="menuItems">FAVOURITES</h4>
+                </a>
+                <a class="links" href="/profile">
+                    <h4 class="menuItems">PROFILE</h4>
+                </a>
+                <a class="links" href="/contact">
+                    <h4 class="menuItems">CONTACT US</h4>
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form">
+                    <h2 class="form-title">Post Job Listing</h2>
+                    <div class="form-group">
+                        <br>
+                        <p>Please enter the following in:</p>
+
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="Title" id="Title" placeholder="Job Title" />
+                        </div>
+                        <select class="form-input" aria-label="Default select example">
+                            <option selected>Job Type</option>
+                            <option value="1">Tech</option>
+                            <option value="2">Business</option>
+                            <option value="3">Criminology</option>
+                            <option value="4">Education</option>
+                            <option value="5">Engineering Science</option>
+                            <option value="6">Other (Input On Job Description)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="Location" id="location"
+                               placeholder="Job Location" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="wage" id="wage" placeholder="Hourly Wage" />
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                            <textarea type="job_desc" rows="20" cols="90" class="form-input" name="job_desc"
+                                      id="job_desc" placeholder="Enter Job Description"></textarea>
+                    </Div>
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all
+                            statements in <a href="#" class="term-service">Terms of service</a></label>
+                    </div>
+                    <div class="form-group">
+                        <button id="submit-job" class="form-submit">Post Job</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>
