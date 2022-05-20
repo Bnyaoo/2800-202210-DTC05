@@ -2,7 +2,6 @@ const axios = require('axios');
 const Listing = require('../model/listing');
 const Applicant = require("../model/applicants");
 
-
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
     axios.get('http://localhost:5000/api/users')

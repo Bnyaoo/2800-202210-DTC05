@@ -150,8 +150,11 @@ route.get('/products/:prodId', services.getListingDetail);
 
 route.get("/listing-applied", services.applicationSuccess)
 
+<<<<<<< HEAD
 // route.post("/listing-applied", services.appliedToListing);
 
+=======
+>>>>>>> test_Fix
 route.post('/add-to-cart', services.addToCart);
 
 route.get('/cart', services.getCart);
