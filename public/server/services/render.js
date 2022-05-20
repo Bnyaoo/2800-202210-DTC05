@@ -5,7 +5,7 @@ const Applicant = require("../model/applicants");
 
 exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('base', { users : response.data });
         })
@@ -19,7 +19,7 @@ exports.add_user = (req, res) =>{
 }
 
 exports.update_user = (req, res) =>{
-    axios.get('http://localhost:5000/api/users', { params : { id : req.query.id }})
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("update_user", { user : userdata.data})
         })
@@ -30,7 +30,7 @@ exports.update_user = (req, res) =>{
 
 exports.admin = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('admin', { users : response.data });
         })
@@ -44,7 +44,7 @@ exports.index = (req, res) => {
 }
 
 exports.register = (req, res) => {
-    axios.get('http://localhost:5000/api/users', { params : { id : req.query.id }})
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("register", { user : userdata.data})
         })
@@ -59,7 +59,7 @@ exports.landingPage = (req, res) => {
 
 exports.base = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('base', { users : response.data });
         })
@@ -70,7 +70,7 @@ exports.base = (req, res) => {
 
 exports.dashboard = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('dashboard', { users : response.data });
         })
@@ -96,7 +96,7 @@ exports.contact = (req ,res)=> {
 
 exports.welcomePage = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('welcomePage', { users : response.data });
         })
@@ -107,7 +107,7 @@ exports.welcomePage = (req, res) => {
 
 exports.profile = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('profile', { users : response.data });
         })
@@ -118,7 +118,7 @@ exports.profile = (req, res) => {
 
 exports.postJob = (req, res) => {
     // Make a get request to /api/users
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://polar-coast-34446.herokuapp.com/api/users')
         .then(function(response){
             res.render('postJob', { users : response.data });
         })
