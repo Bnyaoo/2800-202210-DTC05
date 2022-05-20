@@ -231,8 +231,4 @@ exports.deleteInCart = (req, res, next) => {
 
 }
 
-<<<<<<< HEAD
 // SHOP JOB LISTINGS CART END //
-=======
-// SHOP JOB LISTINGS CART END //
->>>>>>> a007793b6ffaf5b16fc25ad1f42a9ecc6ae1aa53
