@@ -148,6 +148,8 @@ route.get('/listings', services.getAllListings);
 
 route.get('/products/:prodId', services.getListingDetail);
 
+route.get("/listing-applied", services.applicationSuccess)
+
 route.post('/add-to-cart', services.addToCart);
 
 route.get('/cart', services.getCart);
