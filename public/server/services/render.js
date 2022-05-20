@@ -6,7 +6,7 @@ exports.homeRoutes = (req, res) => {
     // Make a get request to /api/users
     axios.get('http://localhost:5000/api/users')
         .then(function(response){
-            res.render('base', { users : response.data });
+            res.render('landingPage', { users : response.data });
         })
         .catch(err =>{
             res.send(err);

@@ -59,7 +59,7 @@ route.post('/login', async (req, res) => {
             return res.redirect('/postJob');
             // login redirect for students
         } else if (user.privilege == "Student") {
-            return res.redirect('/add-listing');
+            return res.redirect('/listings');
         }
     }
 
