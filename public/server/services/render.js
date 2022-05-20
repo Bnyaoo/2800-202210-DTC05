@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Listing = require('../model/listing');
+const Applicant = require("../model/applicants");
 
 
 exports.homeRoutes = (req, res) => {
@@ -204,6 +205,36 @@ exports.getListingDetail = (req, res, next) => {
         })
         .catch(err => console.log(err));
 }
+
+exports.applicationSuccess = (req, res, next) => {
+    const prod = new Applicant({
+        jobTitle: "Test2",
+        applicantName: "Jane Doe",
+        email: "randomGmail@coding.com"
+    });
+    prod.save()
+        .then(result => {
+            res.redirect('/listings');
+        }).catch(err => console.log(err));
+
+
+    console.log("Application Succesful!")
+    res.send("Success")
+}
+
+// exports.appliedToListing = (req, res, next) => {
+//     const prod = new Applicant({
+//         jobTitle: "Test1",
+//         applicantName: "John Doe",
+//         email: "randomEmail@coding.com"
+//     });
+//     prod.save()
+//         .then(result => {
+//             res.redirect('/listings');
+//         }).catch(err => console.log(err));
+//     console.log("application sent")
+
+// }
 
 exports.addToCart = (req, res, next) => {
     req.user.addToCart(req.body.id)
