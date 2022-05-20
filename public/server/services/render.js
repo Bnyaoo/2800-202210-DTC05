@@ -135,6 +135,7 @@ exports.getListingForm = (req, res, next) => {
 exports.postListing = (req, res, next) => {
     const prod = new Listing({
         title: req.body.title,
+        location: req.body.location,
         imageURL: req.body.imageURL,
         pay: req.body.pay,
         description: req.body.description
@@ -200,7 +201,7 @@ exports.getAllListings = (req, res, next) => {
 exports.getListingDetail = (req, res, next) => {
     Listing.findById(req.params.prodId)
         .then(listing => {
-            res.render('listing-detail', { prod: listing, pageTitle: 'Listing Detail', path: '/', name: 'Fucker Jones' });
+            res.render('listing-detail', { prod: listing, pageTitle: 'Listing Detail', path: '/', name: 'Mr. Jones' });
         })
         .catch(err => console.log(err));
 }
@@ -220,20 +221,6 @@ exports.applicationSuccess = (req, res, next) => {
     console.log("Application Succesful!")
     res.send("Success")
 }
-
-// exports.appliedToListing = (req, res, next) => {
-//     const prod = new Applicant({
-//         jobTitle: "Test1",
-//         applicantName: "John Doe",
-//         email: "randomEmail@coding.com"
-//     });
-//     prod.save()
-//         .then(result => {
-//             res.redirect('/listings');
-//         }).catch(err => console.log(err));
-//     console.log("application sent")
-
-// }
 
 exports.addToCart = (req, res, next) => {
     req.user.addToCart(req.body.id)

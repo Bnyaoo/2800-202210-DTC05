@@ -1,30 +1,48 @@
-<%- include('include/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+        <%= pageTitle%>
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <link href="/css/listing-details.css" rel="stylesheet">
+
+</head>
 
     <body>
         <%- include('include/navigation.ejs')%>
             <!-- Page Content -->
-            <div class="container">
-                <div class="row">
-                    <%- include('include/sidebar.ejs')%>
-                        <div class="col-lg-9">
-                            <%- include('include/carousel.ejs')%>
+            <div class="container" id="content">
+
+
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <h1>
+                                    <div class="col-sm-12" id="description">
+                                        <h1 id="title">
                                             <%= prod.title %>
                                         </h1>
                                         <p><img src="<%= prod.imageURL%>" /></p>
-                                        <p>Pay/Hour:
-                                            $<%= prod.pay%>
-                                                CAD
+                                        <br>
+                                        <h3>Pay/Hour:</h3>
+                                        <p>$<%= prod.pay%>
+                                            CAD
                                         </p>
-
                                         <h3>Location:</h3>
-                                        <p>
-                                            <%= prod.location%>
-                                        </p>
-                                        <p>Description:
-                                            <%= prod.description%>
+                                        <p><%= prod.location%></p>
+                                        <h3>Description:</h3>
+                                        <p> <%= prod.description%>
                                         </p>
                                         <br>
                                         <a type="submit" class="btn btn-primary" href="/listing-applied">Apply</a>
@@ -32,9 +50,8 @@
 
                                 </div>
                                 <!-- /.row -->
-                        </div>
+
                         <!-- /.col-lg-9 -->
-                </div>
                 <!-- /.row -->
 
             </div>
