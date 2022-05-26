@@ -1,6 +1,6 @@
 
 <!-- include header -->
-<%- include('include/_header') %>
+<%- include('layouts/_header') %>
 <!-- /include header -->
 
   <!-- Main Site -->
@@ -52,11 +52,11 @@
                 <label for="radio-4" class="radio-label">Admin</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.privilege == 'User' ? 'checked' : '' %> >
-                <label for="radio-5" class="radio-label">User</label>
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.privilege == 'Student' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Student</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.privilege == 'Employer' ? 'checked' : '' %> >
+                <input type="radio" id="radio-6" name="status" value="Inactive" <%= user.privilege == 'Employer' ? 'checked' : '' %> >
                 <label for="radio-6" class="radio-label">Employer</label>
             </div>
         </div>
@@ -73,5 +73,5 @@
 <!-- /Main Site -->
 
 <!-- include footer -->
-<%- include('include/_footer') %>
+<%- include('layouts/_footer') %>
 <!-- /include footer -->
