@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connectify</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <link href="/css/delete.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<%- include('layouts/adminNavigation.ejs')%>
+
+<br>
+
+<h1><span class="button reset-button"></span></h1>
+<p class="desc"><a href="https://fjolt.com/article/css-delete-item-ui-animations"></a></p>
+<div class="item-holder">
+    <div class="item">
+        <div class="image"></div>
+        <div class="delete" data-delete="zoom"><i class="far fa-times"></i></div>
+        <h3>Front-End Dev @ FakeBook Inc.</h3>
+        <p>Pay/Hour: $26 CAD</p>
+        <p>Location: Remote</p>
+        <a href="/products/628e8d0f63b68f376062b154">Click to find out more</a>
+        <div class="d-flex justify-content-between align-items-center">
+        </div>
+        <div class="animation-assets"></div>
+    </div>
+    <div class="item">
+        <div class="image"></div>
+        <div class="delete" data-delete="zoom"><i class="far fa-times"></i></div>
+        <h3>Full-Stack Dev @ Fake Company</h3>
+        <p>Pay/Hour: $18 CAD</p>
+        <p>Location: Remote</p>
+        <a href="/products/628e9c10855cbd1658425518">Click to find out more</a>
+        <div class="d-flex justify-content-between align-items-center">
+        </div>
+        <div class="animation-assets"></div>
+    </div>
+    <div class="item">
+        <div class="image"></div>
+        <div class="delete" data-delete="zoom"><i class="far fa-times"></i></div>
+        <h3>Software Engineer @ Tesla</h3>
+        <p>Pay/Hour: $40 CAD</p>
+        <p>Location: Remote</p>
+        <a href="/products/628ea80c855cbd1658425589">Click to find out more</a>
+        <div class="d-flex justify-content-between align-items-center">
+        </div>
+        <div class="animation-assets"></div>
+    </div>
+    <div class="item">
+        <div class="image"></div>
+        <div class="delete" data-delete="zoom"><i class="far fa-times"></i></div>
+        <h3>Data Analyst @ Connectify</h3>
+        <p>Pay/Hour: $24 CAD</p>
+        <p>Location: 555 Seymour St. Vancouver, BC</p>
+        <a href="/products/628ea832855cbd165842558e">Click to find out more</a>
+        <div class="d-flex justify-content-between align-items-center">
+        </div>
+        <div class="animation-assets"></div>
+    </div>
+</div>
+<script defer src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+<!--&lt;!&ndash; Footer &ndash;&gt;-->
+<!--<footer class="py-5 bg-dark">-->
+<!--    <div class="container">-->
+<!--        <p class="m-0 text-center text-white">Copyright &copy; Connectify 2022</p>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; /.container &ndash;&gt;-->
+<!--</footer>-->
+
+<!-- Bootstrap core JavaScript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/deleteAnimation.js"></script>
+<!--<script>-->
+<!--    document.querySelectorAll('.delete').forEach(function(item) {-->
+<!--        item.addEventListener('click', function(e) {-->
+<!--            // First we get the-->
+<!--            let newClass = this.getAttribute('data-delete');-->
+<!--            let getParent = parent(this, '.item', 1);-->
+<!--            if(newClass === 'shredder') {-->
+<!--                getParent.classList.add('shredding');-->
+<!--                // Shredder animation-->
+<!--                // Slices-->
+<!--                let shredAmount = 10;-->
+<!--                let width = document.querySelector('.item.shred').getBoundingClientRect().width / shredAmount;-->
+<!--                let animationName = 'spinALittle';-->
+<!--                let animationDelay = 0;-->
+<!--                for(let x = 0; x <= shredAmount; ++x) {-->
+<!--                    animationDelay += 1;-->
+<!--                    if(x % 2 === 0) {-->
+<!--                        animationName = 'spinALittleAlt';-->
+<!--                    } else {-->
+<!--                        animationName = 'spinALittle';-->
+<!--                    }-->
+<!--                    if(x % 3 === 0) {-->
+<!--                        animationDelay = 0;-->
+<!--                    }-->
+<!--                    let newEl = document.createElement('div');-->
+<!--                    newEl.classList.add('item-wrap');-->
+<!--                    newEl.innerHTML = `<div class="item">${getParent.innerHTML}</div>`;-->
+<!--                    newEl.querySelector('.animation-assets').innerHTML = '';-->
+<!--                    let clip = `clip-path: inset(0px ${(shredAmount - x - 1) * width}px 0 ${(x * width)}px); animation-delay: 0.${animationDelay}s; transform-origin: ${x*width}px 125px; animation-name: ${animationName};`-->
+<!--                    newEl.children[0].setAttribute('style', clip);-->
+<!--                    getParent.querySelector('.animation-assets').append(newEl);-->
+<!--                }-->
+<!--            } else {-->
+<!--                getParent.classList.add(newClass);-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+</body>
+
+</html>
