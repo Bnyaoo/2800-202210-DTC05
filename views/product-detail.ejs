@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+        <%= pageTitle%>
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <link href="/css/listing-details.css" rel="stylesheet">
+
+</head>
+
+    <body>
+        <%- include('layouts/studentNavigation.ejs')%>
+            <!-- Page Content -->
+            <div class="container" id="content">
+
+
+                                <div class="row">
+                                    <div class="col-sm-12" id="description">
+                                        <h1 id="title">
+                                            <%= prod.company %>
+                                        </h1>
+
+                                        <p><img src="<%= prod.imageURL%>" /></p>
+                                        <br>
+                                        <h3>Job Title:</h3>
+                                            <p><%= prod.title %></p>
+                                        
+                                        <h3>Pay/Hour:</h3>
+                                        <p>$<%= prod.price%>
+                                            CAD
+                                        </p>
+                                        <h3>Location:</h3>
+                                        <p><%= prod.location%></p>
+                                        <h3>Description:</h3>
+                                        <p> <%= prod.description%>
+                                        </p>
+
+                                        
+                                        <br>
+                                    </div>
+
+                                </div>
+
+            </div>
+            <!-- /.container -->
+
+            <%- include('layouts/end.ejs')%>

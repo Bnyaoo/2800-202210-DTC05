@@ -7,11 +7,13 @@
 
     <title>Connectify</title>
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="/css/navbar.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./profile.js "></script>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/main.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
@@ -19,23 +21,7 @@
 </head>
 
 <body>
-<!-- Navigation-->
-<div class="pos-f-t" id="navbar">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <a class= "links" href="/welcomePage"><h4 class="menuItems">HOME</h4></a>
-            <a class= "links" href="#"><h4 class="menuItems">OPPORTUNITIES</h4></a>
-            <a class= "links" href="#"><h4 class="menuItems">FAVOURITES</h4></a>
-            <a class= "links" href="/profile"><h4 class="menuItems">PROFILE</h4></a>
-            <a class= "links" href="/contact"><h4 class="menuItems">CONTACT US</h4></a>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-</div>
+<%- include('layouts/studentNavigation.ejs')%>
 
 <main>
     <div class="container rounded bg-white mt-5 mb-5">
@@ -45,7 +31,7 @@
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                                                                                              width="150px"
                                                                                              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"><span
-                            class="font-weight-bold">John Doe</span><span class="text-black-50">johnDoe@mail.com</span><span> </span>
+                            class="font-weight-bold">Student Smith</span><span class="text-black-50">studentSmith@gmail.com</span><span> </span>
                 </div>
             </div>
 
@@ -53,7 +39,7 @@
                 <div class="p-3 py-5">
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h2 class="text-right">Profile Settings</h2>
+                        <h2 class="text-right">Profile</h2>
                     </div>
 
                     <div class="row mt-2">
@@ -92,37 +78,6 @@
 
                         <br><br>
 
-                        <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control"
-                                                                                           placeholder="enter address" value="" id="address">
-                        </div>
-
-                        <br><br>
-
-                        <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control"
-                                                                                        placeholder="city" value="" id="city">
-                        </div>
-
-                        <br><br><br>
-
-                        <div class="col-md-12">
-                            <select name="province" id="province">
-                                <option value="default">Select Province</option>
-                                <option value="British Columbia">BC</option>
-                                <option value="Alberta">AB</option>
-                                <option value="Saskatchewan">SK</option>
-                                <option value="Manitoba">MB</option>
-                                <option value="Ontario">ON</option>
-                                <option value="Quebec">QC</option>
-                                <option value="Newfoundland and Labrador">NL</option>
-                                <option value="New Brunswick">NB</option>
-                                <option value="Nova Scotia">NS</option>
-                                <option value="Prince Edward Island">PEI</option>
-                                <option value="Yukon">YT</option>
-                                <option value="Northwest Territories">NT</option>
-                                <option value="Nunavut">NU</option>
-                            </select>
-                        </div>
-
 
                     </div>
 
@@ -144,7 +99,7 @@
                         </div>
 
                         <div class="mt-5 text-center">
-                            <button id="submit" class="btn btn-primary profile-button" type="button">Save Profile</button>
+                            <button id="submit" class="btn btn-primary profile-button" type="button">Apply</button>
                         </div>
 
                     </div>
@@ -159,7 +114,7 @@
 
                     <br>
 
-                    <div class="col-md-12"><label class="labels">Experience in Tech</label><input type="text" class="form-control"
+                    <div class="col-md-12"><label class="labels">Work Experience</label><input type="text" class="form-control"
                                                                                                   placeholder="experience" value="" id="experience">
                     </div>
 
@@ -177,6 +132,7 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/profile.js"></script>
 
 
 </body>

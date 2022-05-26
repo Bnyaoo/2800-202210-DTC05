@@ -1,0 +1,48 @@
+body {
+  height: 100%;
+}
+#banner {
+  width: 100%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  background-image: url("https://media.istockphoto.com/videos/defocused-seamless-loop-background-video-id1016831586?s=640x640");
+  background-repeat: no-repeat;
+  background-size: 200%;
+  color: white;
+  border-radius: 25px;
+}
+
+#details {
+  width: 140%;
+  text-align: center;
+  padding-bottom: 30%;
+}
+
+#totalJobs {
+  margin-top: 3%;
+  float: left;
+}
+
+.table {
+  width: 100%;
+}
+
+footer {
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 991px) {
+  #details {
+  width: 105%;
+  }
+} 
+
+@media screen and (max-width: 575px) {
+  #details {
+      width: 105%;
+  }
+
+  #banner {
+      border-radius: 0px;
+  }
+} 

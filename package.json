@@ -1,35 +1,21 @@
 {
-  "name": "crud_app",
-  "version": "1.0.0",
-  "description": "crud application with express and mongodb",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "keywords": [
-    "crud",
-    "mongodb"
-  ],
-  "author": "Benny Chao",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.21.0",
-    "body-parser": "^1.19.0",
-    "connect": "^3.7.0",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.11",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bnyaoo/2800-202210-DTC05.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Bnyaoo/2800-202210-DTC05/issues"
-  },
-  "homepage": "https://github.com/Bnyaoo/2800-202210-DTC05#readme"
+    "name": "onlineshopping",
+    "version": "1.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "author": "Rujuan Xing",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "body-parser": "^1.19.0",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "mongodb": "^3.5.4",
+        "mongoose": "^5.9.4",
+        "passport-local-mongoose": "^7.1.2"
+    }
 }

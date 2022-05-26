@@ -1,0 +1,29 @@
+#card-img {
+  margin: 5px;
+  height: 35vh;
+  width: 100%;
+  border-radius: 25px;
+}
+#card {
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  /* width: 25vw; */
+  
+
+}
+
+.btn {
+  width: 100%;
+  margin: 3px;
+}
+
+.col {
+  margin-bottom: 20px;
+}
+
+footer {
+  position: relative;
+  bottom:0;
+  width:100%;
+}

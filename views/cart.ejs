@@ -1,29 +1,60 @@
-<%- include('include/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+        Connectify
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/appliedTo.css">
+
+</head>
 
     <body>
-        <%- include('include/navigation.ejs')%>
+        <%- include('layouts/studentNavigation.ejs')%>
+
+        <br>
             <!-- Page Content -->
             <div class="container">
                 <div class="row">
-                    <%- include('include/sidebar.ejs')%>
+                    <section class="jumbotron text-center" id="banner">
+                        <div class="container">
+                          <h1 class="jumbotron-heading"> Application History</h1>
+                          <!-- <p class="lead text-muted">Your talent determines what you can do. Your motivation determines how much you are willing to do. Your attitude determines how well you do it. <br> – Lou Holtz</p> -->
+                          <p>
+                            <!-- <a href="#" class="btn btn-primary my-2">View Opportunities</a>
+                            <a href="./profile.html" class="btn btn-secondary my-2">Set Up Profile</a> -->
+                          </p>
+                        </div>
+                      </section>
                         <div class="col-lg-9">
-                            <%- include('include/carousel.ejs')%>
-                                <div class="row">
+                                <div class="row" id="details">
                                     <div class="col-sm-12">
 
                                         <% if (cart === null || cart.items.length == 0) {%>
 
-                                            <h2>No item in shopping Cart</h2>
+                                            <h2>You haven't applied for any jobs yet.</h2>
 
                                             <%} else {%>
-                                                <h2>Shopping Cart Detail</h2>
 
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">#</th>
-                                                            <th scope="col">Title</th>
-                                                            <th scope="col">Price</th>
+                                                            <th scope="col">Job Title</th>
+                                                            <th scope="col">Pay/ Hour (CAD)</th>
                                                             <th scope="col">Quantity</th>
                                                             <th scope="col"></th>
                                                         </tr>
@@ -53,14 +84,20 @@
                                                                 </td>
                                                             </tr>
                                                             <%}%>
-                                                                <tr>
-                                                                    <td>Total Price: </td>
+                                                                <!-- <tr>
+                                                                    <td colspan="3">Total Jobs Applied To: </td>
                                                                     <td colspan="4">
                                                                         <%= cart.totalPrice%>
                                                                     </td>
-                                                                </tr>
+                                                                </tr> -->
                                                     </tbody>
                                                 </table>
+
+                                             
+                                                    <h5 id="totalJobs">Total Jobs Applied To: <%= cart.totalPrice%></h5>
+                                                    
+                                                        
+                                                    
 
 
                                                 <%}%>
@@ -78,4 +115,4 @@
             </div>
             <!-- /.container -->
 
-            <%- include('include/end.ejs')%>
+            <%- include('layouts/end.ejs')%>
