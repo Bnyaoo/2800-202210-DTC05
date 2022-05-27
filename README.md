@@ -164,6 +164,19 @@ It has the following subfolders and files:
 - Mongoose shop app: https://www.youtube.com/playlist?list=PLGTrAf5-F1YLPa_HeR-_IB4LkMUTAiUJU
 
 ## How to Install and Run Project:
+1. Open your terminal and go to the directory you would like to clone our project in
+2. Run the command `git clone https://github.com/Bnyaoo/2800-202210-DTC05.git`
+3. Open this folder with the IDE of your choice
+4. In the terminal, `CD` into the project directory and run the command `node app.js`. You should get the message below:
+<img src="https://user-images.githubusercontent.com/90500768/170639727-32144118-6e4b-4b38-8b7e-8e33480e2508.png">
+5. Open your browser and type `http://localhost:5000/` into the URL bar
+
+## Troubleshooting while trying to run project locally:
+If you run into any errors while attempting step 4 do the following:
+1. Type the command `npm install`
+2. Attempt step 4 again
+3. If you still run into errors type the command `npm install` followed by the package name that will be listed here.
+<img"https://user-images.githubusercontent.com/90500768/170639967-0426902a-6acd-48c7-9a4c-f22c1b2388e9.png">
 
 ## How to use Connectify:
 
