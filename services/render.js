@@ -58,16 +58,6 @@ exports.admin = (req, res) => {
         })
 }
 
-// exports.index = (req, res) => {
-//     axios.get('http://localhost:5000/api/users', { params : { id : req.query.id }})
-//         .then(function(userdata){
-//             res.render("index", { user : userdata.data})
-//         })
-//         .catch(err =>{
-//             res.send(err);
-//         })
-// }
-
 exports.register = (req, res) => {
     axios.get('http://localhost:5000/api/users', { params : { id : req.query.id }})
         .then(function(userdata){

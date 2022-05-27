@@ -1,7 +1,11 @@
 const User = require('../models/user');
 
 exports.getSignupForm = (req, res, next) => {
-    res.render('signup', { path: '/signup', pageTitle: 'Sign up', name: 'Student Smith' })
+    res.render('signup', {
+        path: '/signup',
+        pageTitle: 'Sign up',
+        name: 'Student Smith'
+    })
 }
 
 exports.postSignup = (req, res, next) => {

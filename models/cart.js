@@ -1,11 +1,15 @@
 let cart = null;
 
+// Represents a "cart" object (applied jobs history)
 module.exports = class Cart {
 
     static save(product) {
 
         if (cart === null) {
-            cart = { products: [], totalPrice: 0 };
+            cart = {
+                products: [],
+                totalPrice: 0
+            };
         }
 
         const existingProductIndex = cart.products.findIndex(p => p.id == product.id); // to check product is existing in cart

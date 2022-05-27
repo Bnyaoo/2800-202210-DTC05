@@ -1,8 +1,8 @@
-
 $("#add_user").submit(function(event){
     alert("Data Inserted Successfully!");
 })
 
+/* Functionality for admin to create a new user*/
 $("#update_user").submit(function(event){
     event.preventDefault();
 

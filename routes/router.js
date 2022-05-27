@@ -6,10 +6,16 @@ const route = express.Router()
 const services = require('../services/render');
 const controller = require('../controllers/controller');
 const mongoose = require("mongoose");
-const {add_user} = require("../services/render");
+const {
+    add_user
+} = require("../services/render");
 const axios = require("axios");
-const {render} = require("ejs");
-const {errors} = require("passport-local-mongoose");
+const {
+    render
+} = require("ejs");
+const {
+    errors
+} = require("passport-local-mongoose");
 
 /**
  *  @description Root Route
@@ -48,11 +54,19 @@ route.get('/employerHome', services.employerHome)
  *  @method path /login
  */
 route.post('/login', async (req, res) => {
-    const { email, password } = req.body
-    const userSchema = await User.findOne({ email }).lean()
+    const {
+        email,
+        password
+    } = req.body
+    const userSchema = await User.findOne({
+        email
+    }).lean()
 
     if (!userSchema) {
-        return res.json({ status: 'error', error: 'Invalid email/password' })
+        return res.json({
+            status: 'error',
+            error: 'Invalid email/password'
+        })
     }
 
     if (await password == userSchema.password) {
@@ -69,7 +83,10 @@ route.post('/login', async (req, res) => {
         }
     }
 
-    res.json({ status: 'error', error: 'Invalid email/password' })
+    res.json({
+        status: 'error',
+        error: 'Invalid email/password'
+    })
 })
 
 // END OF LOGIN BLOCK //
@@ -120,7 +137,7 @@ route.get('/studentContact', services.studentContact)
  *  @description for contact us page
  *  @method GET /employerContact
  */
- route.get('/employerContact', services.employerContact)
+route.get('/employerContact', services.employerContact)
 
 /**
  *  @description for student welcome page
@@ -138,9 +155,9 @@ route.get('/profile', services.profile)
  *  @description for user profile page
  *  @method GET /profile
  */
- route.get('/profile1', services.profile1)
+route.get('/profile1', services.profile1)
 
- /**
+/**
  *  @description for user profile page
  *  @method GET /profile
  */
@@ -150,25 +167,25 @@ route.get('/profile2', services.profile2)
  *  @description for user profile page
  *  @method GET /profile
  */
- route.get('/profile3', services.profile3)
+route.get('/profile3', services.profile3)
 
 /**
  *  @description for confirmation page
  *  @method GET /success
  */
- route.get('/success', services.success)
+route.get('/success', services.success)
 
- /**
+/**
  *  @description for resume page
  *  @method GET /success
  */
-  route.get('/resume', services.resume)
+route.get('/resume', services.resume)
 
-   /**
+/**
  *  @description for cover letter page
  *  @method GET /success
  */
-    route.get('/coverLetter', services.coverLetter)
+route.get('/coverLetter', services.coverLetter)
 
 /**
  *  @description for job posting page for employers

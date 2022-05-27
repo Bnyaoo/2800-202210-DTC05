@@ -3,6 +3,7 @@ const Product = require('../models/product');
 
 const Schema = mongoose.Schema;
 
+// Defines the values needed to create a user in our database
 const userSchema = new Schema({
     name: {
       type: String
@@ -38,6 +39,7 @@ const userSchema = new Schema({
     }
 });
 
+// Defines the user's "cart" to keep track of what jobs that user has applied for
 userSchema.methods.addToCart = async function(productId) {
     const product = await Product.findById(productId);
     if (product) {
