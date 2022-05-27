@@ -167,13 +167,19 @@ It has the following subfolders and files:
 
 ## How to use Connectify:
 
-#### As a student:
+### As a student:
 1. Login to an existing account or create a new one
-   <img src="https://user-images.githubusercontent.com/18428358/170604695-f711a0c5-9bba-4d98-b739-73605d7a2398.PNG" width="200" height="400">
+   
+<img src="https://user-images.githubusercontent.com/18428358/170604695-f711a0c5-9bba-4d98-b739-73605d7a2398.PNG" width="200" height="400">
+
 2. Browse the home page to see all the available jobs
-   <img src="https://user-images.githubusercontent.com/18428358/170605628-1550576f-b952-4710-a863-1dbbce9bcdc7.PNG" width="200" height="400">
+   
+<img src="https://user-images.githubusercontent.com/18428358/170605628-1550576f-b952-4710-a863-1dbbce9bcdc7.PNG" width="200" height="400">
+
 3. You can view more detail for the project by clicking `View Details`
-   <img src="https://user-images.githubusercontent.com/18428358/170606371-bb908aef-9160-4729-86ab-e8de77a9c530.PNG" width="200" height="400">
+   
+<img src="https://user-images.githubusercontent.com/18428358/170606371-bb908aef-9160-4729-86ab-e8de77a9c530.PNG" width="200" height="400">
+
 4. If you choose to apply for a job fill out the profile page and click `Apply`
 
 <img src="https://user-images.githubusercontent.com/18428358/170606472-afef36f6-5ac5-47ab-afd2-e104a75a4925.PNG" width="200" height="400">
@@ -187,6 +193,64 @@ It has the following subfolders and files:
 <br>
 
 7. Click the `Sign Out` tab in the nav bar to sign out of our app
+
+### As an employer:
+1. Login to an existing account or create a new one
+   
+<img src="https://user-images.githubusercontent.com/18428358/170604695-f711a0c5-9bba-4d98-b739-73605d7a2398.PNG" width="200" height="400">
+
+2. Browse the home page to see all the applicants who have applied to the jobs you have posted
+
+<img src="https://user-images.githubusercontent.com/18428358/170624389-2b5e8f28-e9a3-4b6a-a05c-51071a76076e.PNG" width="200" height="400">
+
+3. Click the `Add Listing` tab in the nav bar and fill out the form to post a new job
+
+<img src="https://user-images.githubusercontent.com/18428358/170624527-ab450976-a397-4d47-8c56-677b68d9828f.PNG" width="200" height="400">
+
+4. Click the `Contact Us` tab in the nav bar to find our contact info
+
+
+5. Click the `Sign Out` tab in the nav bar to sign out of our app
+
+### As an employer:
+1. Login to the admin portion of the app by using the correct credentials
+
+<img src="https://user-images.githubusercontent.com/18428358/170604695-f711a0c5-9bba-4d98-b739-73605d7a2398.PNG" width="200" height="400">
+
+2. Click the `All Users` button in the banner to view all the users who have joined our app
+
+<img src="https://user-images.githubusercontent.com/18428358/170624860-279901cf-efb0-4b2a-9ffc-078b38ff1d21.PNG" width="200" height="400">
+
+3. Use the `pencil` icon to edit the info of an existing user or the `x` icon to delete the user from our database
+
+<img src="https://user-images.githubusercontent.com/18428358/170625013-836a1a6b-7961-4f55-a9b6-190ce60d62b3.png" width="200" height="400">
+
+4. Click the `New User` button and fill out the form to add a new user to our database
+
+<img src="https://user-images.githubusercontent.com/18428358/170625265-10b3c763-9d8f-4422-a416-af717eb54bfe.PNG" width="200" height="400">
+
+5. Click the `Connectify` text in the header to get back to the home screen
+
+
+
+6. Click the `Listings` button in the banner to view all the jobs that are posted on our app
+
+<img src="https://user-images.githubusercontent.com/18428358/170625368-4233e05d-7810-4660-a487-bdc6cc989cd7.PNG" width="200" height="400">
+
+7. Click the `x` icon to delete the job listing from our database
+
+
+
+8. Press `Click to find out more` text to view all details for the job posting
+
+<img src="https://user-images.githubusercontent.com/18428358/170625517-2cd8bee5-45dd-4ba4-8c77-9807c75fac5d.PNG" width="200" height="400">
+
+9. Click the `Console` tab in the nav bar to go back and view all the users on our app or click the `Home` tab to go back to the admin home page
+
+
+
+10. Click the `Sign Out` tab in the nav bar to sign out of our app
+
 
 ## Contact Info:
 
