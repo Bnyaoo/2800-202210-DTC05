@@ -1,34 +1,95 @@
-
-   
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Connectify</title>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+        <%= pageTitle%>
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <link href="/css/listings.css" rel="stylesheet">
+
+
 </head>
+
 <body>
 
-    <!-- include header -->
-    <%- include('include/_header') %>
-    <!-- /include header -->
+    <%- include('layouts/studentNavigation.ejs')%>
+    <br>
 
-    <!-- Main site -->
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>Welcome</h1>
-            <button><a class="btn btn-dark btn-sm" href="/admin" >All Users</a></button>
-            <button><a href="/landingPage">Logout</a></button>
+    <center>
+        <!-- Page Content -->
+        <div class="container">
+
+            <!-- <div class="row"> -->
+
+            <%- include('layouts/sidebar.ejs')%>
+
+
+            <div class="col-lg-9">
+
+
+                <div class="col">
+
+                    <% for(let p of prods) {%>
+
+                    <div class="col" id="card-body">
+                        <div class="card h-100" id="card">
+                            <a href="#"><img class="card-img-top" id="card-img" src="<%= p.imageURL%>" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">
+                                        <%= p.title%>
+                                    </a>
+                                </h4>
+                                <h5>Pay/Hour:
+                                    $<%= p.price%>
+                                    CAD
+                                </h5>
+                                <!-- <p class="card-text">
+                                                        <%= p.description%>
+                                                    </p> -->
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-primary" href="/products/<%=p._id%>" role="button">View Details</a>
+                                <!-- <a class="btn btn-primary" href="/edit-listing/<%=p._id%>" role="button">Edit</a> -->
+                                <form action="/delete-listing" method="POST">
+                                    <input type="hidden" name="id" value="<%=p._id%>">
+                                    <!-- <button type="submit" class="btn btn-primary">Delete</button> -->
+                                </form>
+                                <form action="/add-to-cart" method="POST" id="add-to-cart">
+                                    <input type="hidden" name="id" value="<%=p.id%>">
+                                    <button type="submit" class="btn btn-primary" id="apply">Apply</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <% } %>
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.col-lg-9 -->
+            <!-- </div> -->
+            <!-- /.row -->
+
         </div>
-    </div>
-    <!-- /Main site -->
+        <!-- /.container -->
 
+    </center>
 
-    <!-- include footer -->
-    <%- include('include/_footer') %>
-    <!-- /include footer -->
-
-</body>
-</html>
+    <%- include('layouts/end.ejs')%>

@@ -1,35 +1,24 @@
 {
-  "name": "crud_app",
-  "version": "1.0.0",
-  "description": "crud application with express and mongodb",
-  "main": "server.js",
+  "name": "connectify",
+  "version": "1.1.0",
+  "description": "- Prabhjeet Bains (Prab-Bains)\r - Benny Chao (Bnyaoo)\r - Dhruv Gupta (Dhruv-2974)\r - Jerry Han (TheRedLegionRises)",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon app.js"
   },
-  "keywords": [
-    "crud",
-    "mongodb"
-  ],
-  "author": "Benny Chao",
+  "author": "DTC-05",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0",
-    "bcryptjs": "^2.4.3",
+    "axios": "^0.27.2",
     "body-parser": "^1.19.0",
-    "connect": "^3.7.0",
-    "dotenv": "^8.6.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.11",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.6",
-    "passport": "^0.5.2",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^7.0.0",
-    "uuid": "^8.3.2"
+    "mongodb": "^3.5.4",
+    "mongoose": "^5.9.4",
+    "passport-local-mongoose": "^7.1.2"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bnyaoo/2800-202210-DTC05.git"
